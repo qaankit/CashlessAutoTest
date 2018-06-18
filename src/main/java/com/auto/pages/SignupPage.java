@@ -17,8 +17,16 @@ public class SignupPage extends BasePage{
 		click(By.xpath(SignupPageObject.freeTrailLink_xpath +_value+ SignupPageObject.freeTrailLink_xpathA), _value, 3);
 	}
 	
-	public void enter(String _values){
-		
+	public void enter(int _index, String _values){
+		sendKeysByIndex(By.className(SignupPageObject.signupField_class), _index, _values, 3, _values);
+	}
+	
+	public void select(int _index, String _values){
+		dropdownSelectsByIndex(By.className(SignupPageObject.signupField_class), _index, _values);
+	}
+	
+	public void click(String _btnName){
+		click(By.cssSelector(SignupPageObject.signupButton_css), _btnName, 3);
 	}
 
 }

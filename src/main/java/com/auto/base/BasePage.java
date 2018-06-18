@@ -225,6 +225,12 @@ public class BasePage extends Page {
 		pause(_wait);
 
 	}
+	
+	public void sendKeysByIndex(By _by, int _index, String _key, int _wait, String _log){
+		driver.findElements(_by).get(_index).sendKeys(_key);
+		log("Enter "+ _log, ILogLevel.METHOD);
+		pause(_wait);
+	}
 
 	public String getText(By _by) {
 		String text = driver.findElement(_by).getText();
@@ -259,6 +265,11 @@ public class BasePage extends Page {
 
 	public void dropdownSelectsByIndex(By _by, int _index, int _arg) {
 		new Select((WebElement) driver.findElements(_by).get(_index)).selectByIndex(_arg);
+
+	}
+	
+	public void dropdownSelectsByIndex(By _by, int _index, String _arg) {
+		new Select((WebElement) driver.findElements(_by).get(_index)).selectByVisibleText(_arg);
 
 	}
 
@@ -309,7 +320,6 @@ public class BasePage extends Page {
 		DateFormat dateFormat = new SimpleDateFormat("dd_MM_yyyy HH_mm_ss");
 		Date date = new Date();
 		String date1 = dateFormat.format(date).replaceAll(" ", "_");
-		;
 		return date1;
 	}
 

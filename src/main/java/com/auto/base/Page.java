@@ -80,7 +80,6 @@ public class Page {
 			Reporter.log("<br/> <b> <font color='Red' size='3' > [" + msg + "]</font> </b>");
 
 		}
-
 	}
 
 	public String getValue(String _key) {

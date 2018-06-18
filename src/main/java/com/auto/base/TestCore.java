@@ -37,7 +37,6 @@ public class TestCore extends Page {
 	private String testUrl;
 	private String targetBrowser;
 	private String os;
-	private String crossBrowser;
 
 	@BeforeTest(alwaysRun = true)
 	public void fetchSuiteConfiguration(ITestContext testContext) {
@@ -62,8 +61,6 @@ public class TestCore extends Page {
 	 */
 	@BeforeMethod(alwaysRun = true)
 	public void setup(Method method) throws IOException, InterruptedException {
-		if (crossBrowser.toLowerCase().equals("local")) {
-
 			if (os.toLowerCase().equals("windows")) {
 				if (targetBrowser.toLowerCase().contains("firefox") || targetBrowser.toLowerCase().contains("ff")) {
 					System.setProperty("webdriver.gecko.driver",
@@ -85,8 +82,6 @@ public class TestCore extends Page {
 				}
 
 			}
-
-		}
 
 		// Open test url
 		driver.get(testUrl);
