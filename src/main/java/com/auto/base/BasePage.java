@@ -228,12 +228,18 @@ public class BasePage extends Page {
 	
 	public void sendKeysByIndex(By _by, int _index, String _key, int _wait, String _log){
 		driver.findElements(_by).get(_index).sendKeys(_key);
-		log("Enter "+ _log, ILogLevel.METHOD);
+		log("Enter " + "["+ _log +"]", ILogLevel.METHOD);
 		pause(_wait);
 	}
 
 	public String getText(By _by) {
 		String text = driver.findElement(_by).getText();
+		return text;
+
+	}
+	
+	public String getTextWithIndex(By _by, int _index) {
+		String text = driver.findElements(_by).get(_index).getText();
 		return text;
 
 	}
@@ -255,22 +261,26 @@ public class BasePage extends Page {
 
 	public void dropdownSelect(By _by, String _option) {
 		new Select(driver.findElement(_by)).selectByVisibleText(_option);
-		pause(2);
+		log("Select " + "[" + _option + "]", ILogLevel.TEST);
+		pause(3);
 	}
 
 	public void dropdownSelectByIndex(By _by, int _arg) {
 		new Select(driver.findElement(_by)).selectByIndex(_arg);
-
+		log("Select " + "[" + _arg + "]", ILogLevel.TEST);
+		pause(3);
 	}
 
 	public void dropdownSelectsByIndex(By _by, int _index, int _arg) {
 		new Select((WebElement) driver.findElements(_by).get(_index)).selectByIndex(_arg);
-
+		log("Select " + "[" + _arg + "]", ILogLevel.TEST);
+		pause(3);
 	}
 	
 	public void dropdownSelectsByIndex(By _by, int _index, String _arg) {
 		new Select((WebElement) driver.findElements(_by).get(_index)).selectByVisibleText(_arg);
-
+		log("Select " + "[" + _arg + "]", ILogLevel.TEST);
+		pause(3);
 	}
 
 	public void dropdownSelectAll(By _by) {
