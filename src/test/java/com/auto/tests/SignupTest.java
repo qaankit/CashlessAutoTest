@@ -57,6 +57,5 @@ public class SignupTest extends TestCore{
 		signup.click("Sign Up");
 		assertEquals(basepage.getText(By.cssSelector(SignupPageObject.invalidemailMessage_css)),"The email must be a valid email address.");	
 	}
-
-
+	
 }
