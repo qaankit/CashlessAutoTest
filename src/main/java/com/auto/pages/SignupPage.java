@@ -21,7 +21,7 @@ public class SignupPage extends BasePage{
 		click(By.xpath(SignupPageObject.freeTrailLink_xpath +_value+ SignupPageObject.freeTrailLink_xpathA), _value, 3);
 	}
 	
-	public void Enter(int _index, String _values){
+	public void enterInput(int _index, String _values){
 		sendKeysByIndex(By.className(SignupPageObject.signupField_class), _index, _values, 3, _values);
 	}
 	

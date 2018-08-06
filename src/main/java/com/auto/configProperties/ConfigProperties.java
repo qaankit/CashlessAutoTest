@@ -15,6 +15,9 @@ public class ConfigProperties {
 	
 	//Sign-Up Email  validation
 	public static String invalidEmail = "qatest@111.222.333.44444";
+	
+	//Sign-Up Zip-code  validation
+	public static String invalidZipcode = "12";
 
 		
 }
